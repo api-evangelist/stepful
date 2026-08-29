@@ -1,0 +1,97 @@
+# Stepful
+
+> Stepful is a healthcare workforce education company that trains people with a high-school
+> education for entry-level allied-health roles in as little as four months, through live,
+> cohort-based online programs paired with 1:1 coaching, at-home clinical skills kits and
+> employer-site clinical rotations, then places graduates into hospital and clinic jobs.
+
+<!--
+generated: 2026-08-29
+method: generated
+source: apis.yml + repo artifacts; https://www.stepful.com/llms.txt returned HTTP 404 on
+        2026-08-29, so this file is authored by API Evangelist and is NOT published by Stepful.
+-->
+
+## What an agent can and cannot do here
+
+**Stepful publishes no public API.** As of 2026-08-29 there is no OpenAPI, Swagger, GraphQL
+SDL, AsyncAPI, MCP server, A2A agent card, webhook catalog, SDK, CLI, developer portal or
+API reference on any host Stepful operates. Both of its applications are
+authenticated-only: `classroom.stepful.com` (student learning) and `admin.stepful.com`
+(staff administration), each a Rails/Devise session login. There is nothing here for an
+agent to call. Everything below is a human-readable web page.
+
+Two hostnames under stepful.com DO serve APIs, and neither is Stepful's:
+
+- `c.stepful.com` is a CNAME to Converge (runconverge.com), a marketing-attribution
+  platform. It serves a FastAPI OpenAPI at `/api/openapi.json` and an MCP endpoint at
+  `/api/mcp` whose OIDC issuer is `https://app.runconverge.com/api/mcp`. The spec describes
+  ad platforms, pixels, attribution dashboards and Shopify/Amazon data sources — Converge's
+  product, not Stepful's.
+- `k.stepful.com` is a PostHog analytics reverse proxy (`*.proxyhog.com`).
+
+Do not treat either as a Stepful integration surface.
+
+## Company
+
+- [Stepful](https://www.stepful.com/): Home — programs, outcomes, and how the model works.
+- [About](https://www.stepful.com/about): Mission and the case for changing healthcare education.
+- [Careers](https://www.stepful.com/careers): Open roles.
+- [Reviews](https://www.stepful.com/reviews): Student outcomes and testimonials.
+
+## Programs
+
+- [All programs](https://www.stepful.com/programs): The full catalog.
+- [Medical Assistant](https://www.stepful.com/medical-assistant): NHA-CCMA certification track.
+- [Pharmacy Technician](https://www.stepful.com/pharmacy-tech): PTCB-PTCE / NHA-ExCPT track.
+- [Patient Care Technician](https://www.stepful.com/patient-care-tech): NHA-CPT / CET / CPCT-A track.
+- [Medical Administrative Assistant](https://www.stepful.com/medical-admin)
+- [Surgical Technologist](https://www.stepful.com/surgical-tech): NCCT T-SC certification track.
+- [Dental Assistant](https://www.stepful.com/dental-assistant)
+- [Phlebotomy Technician](https://www.stepful.com/phlebotomy): NHA-CPT certification track.
+- [Practical Nursing](https://www.stepful.com/lpn-program): NCLEX-PN qualification track.
+- [Training for caregivers](https://www.stepful.com/training-for-caregivers)
+
+## Employers
+
+- [For Employers](https://www.stepful.com/for-employers): "School-as-a-Service" — employer-led
+  in-house training, upskilling and talent-pipeline programs. Engagement is via a sales form;
+  there is no self-serve or programmatic route.
+
+## Regulatory and legal
+
+- [Regulatory Information](https://www.stepful.com/regulatory-information): State career-school
+  approvals with license numbers (Alabama, California, Indiana, Kentucky, Michigan, Ohio,
+  Pennsylvania, Texas, Utah, Wyoming), the Student Catalog and Grievance Policy. Stepful states
+  it is NOT accredited by a U.S. Department of Education recognized accrediting body.
+- [Terms of Service](https://www.stepful.com/terms-of-service)
+- [Privacy Policy](https://www.stepful.com/privacy-policy)
+
+## Resources
+
+- [Blog](https://www.stepful.com/blog)
+- [FAQ](https://www.stepful.com/faq)
+- [Grants and funding](https://www.stepful.com/grants)
+- [Healthcare career pathways guide](https://www.stepful.com/resources/healthcare-career-paths)
+- [Free CCMA practice test](https://www.stepful.com/resources/ccma-practice-test)
+- [Free PTCB practice test](https://www.stepful.com/resources/ptcb-practice-test)
+- [Healthcare career quiz](https://www.stepful.com/healthcare-career-quiz)
+- [Sitemap](https://www.stepful.com/sitemap.xml)
+
+## Open source
+
+- [github.com/stepful](https://github.com/stepful): 12 public repos.
+- [cyperful](https://github.com/stepful/cyperful) ([gem](https://rubygems.org/gems/cyperful)):
+  interactive test-debugger UI for Capybara. MIT, v0.3.1 published 2025-01-09. A developer
+  tool, not a Stepful API client.
+
+## Contact
+
+- hello@stepful.com — general
+- (332) 334-8285
+- 4444 2nd Ave #36001, Detroit, MI 48201
+
+## Optional
+
+- [Login](https://classroom.stepful.com/users/sign_in): Student classroom. Credentialed access only.
+- [Forge Global secondary market listing](https://forgeglobal.com/stepful_stock/)

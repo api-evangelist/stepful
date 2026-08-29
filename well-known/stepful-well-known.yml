@@ -1,0 +1,109 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  GET probes of /.well-known/* on every stepful.com host discovered during enrichment,
+  2026-08-29
+note: >-
+  NO POINTER IS EMITTED for this file. Stepful serves no /.well-known document from any host
+  it operates: www.stepful.com answers every /.well-known/* path with a Webflow
+  "Invalid .well-known request" 404 page, and classroom/admin/asset-cdn return their
+  application 404. The single 200 in this record — /.well-known/openid-configuration on
+  c.stepful.com — is NOT Stepful's: c.stepful.com is a CNAME to Converge
+  (dqhzqrkt8v2js.cloudfront.net) and the document it returns declares
+  issuer https://app.runconverge.com/api/mcp. It is the vendor's OAuth metadata surfaced
+  through a first-party-domain proxy, so it is recorded here as evidence and deliberately
+  NOT credited to Stepful. This is a recorded absence, which is valid data.
+hosts:
+- host: www.stepful.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: classroom.stepful.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: admin.stepful.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: asset-cdn.stepful.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: c.stepful.com
+  operator: third-party (Converge, runconverge.com)
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    owner: converge
+    credited_to_stepful: false
+    detail: >-
+      Body declares issuer https://app.runconverge.com/api/mcp with authorization/token/
+      registration endpoints all on app.runconverge.com. Not saved and not credited —
+      the document is Converge's, served through a CNAME'd Stepful subdomain.
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: k.stepful.com
+  operator: third-party (PostHog)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+summary:
+  hosts_probed: 6
+  documents_served_by_stepful: 0
+  agent_card_found: false
+  security_txt_found: false
+  api_catalog_found: false

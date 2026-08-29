@@ -1,0 +1,17 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  Contract-discovery probes across www.stepful.com, classroom.stepful.com,
+  admin.stepful.com, asset-cdn.stepful.com, c.stepful.com and k.stepful.com, 2026-08-29;
+  no developer documentation exists on any of them
+limit_count: 0
+rate_limits: []
+response_headers: []
+note: >-
+  An honest zero. Stepful publishes no API, no developer documentation and no rate-limit
+  policy, so there is no published limit, window, burst, exhaustion status code or
+  RateLimit-* / X-RateLimit-* / Retry-After header to record. No unauthenticated Stepful
+  API response was observable to probe headers from either — classroom.stepful.com and
+  admin.stepful.com return HTML sign-in pages, and www.stepful.com is a static Webflow site
+  behind Cloudflare. The one rate-limited API surface reachable on a stepful.com hostname
+  belongs to Converge (c.stepful.com) and is not Stepful's to be credited or debited for.

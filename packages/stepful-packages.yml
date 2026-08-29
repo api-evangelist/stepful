@@ -1,0 +1,72 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://github.com/stepful (12 public repos, enumerated via the GitHub REST API
+  2026-08-29), https://rubygems.org/api/v1/gems/cyperful.json, registry.npmjs.org search
+  "stepful" (0 results), pypi.org/pypi/stepful/json (404)
+note: >-
+  NO `SDKs` POINTER IS EMITTED. Stepful publishes no API and therefore no API client
+  library in any language. The one package below is a genuine first-party open-source
+  developer tool (a Capybara test debugger) released from Stepful's GitHub org — it is
+  real, official and dated, but it is NOT a client for a Stepful API, so crediting it
+  against the sdk_count check would be a false claim. Everything else in the org is a
+  fork of a third-party client (Freshdesk, Front, Checkr, Customer.io, Zoom, Rails,
+  Scenic) or an unpublished internal repo.
+packages:
+- name: cyperful
+  registry: rubygems
+  url: https://rubygems.org/gems/cyperful
+  repository: https://github.com/stepful/cyperful
+  official: true
+  api_client: false
+  kind: developer-tool
+  language: ruby
+  license: MIT
+  description: Interactive system-testing / test-debugger UI for Capybara.
+  version: 0.3.1
+  published: '2025-01-09'
+  downloads_total: 32687
+  stars: 361
+  note: >-
+    First-party open source authored inside Stepful's engineering org. Last release
+    2025-01-09; unreleased for over 19 months as of this pass. It wraps Capybara, not a
+    Stepful API.
+unpublished_repos:
+- name: socratease-fivetran-connector
+  repository: https://github.com/stepful/socratease-fivetran-connector
+  registry: null
+  version: null
+  published: null
+  note: >-
+    Public source, no registry artifact. A Fivetran custom connector that pulls data OUT
+    of Socratease (a third-party learning platform Stepful consumes) into a warehouse.
+    It is not a Stepful API client and has no package registry entry to query.
+- name: fullstack_boilerplate
+  repository: https://github.com/stepful/fullstack_boilerplate
+  registry: null
+  version: null
+  published: null
+  note: Internal TypeScript project template. Not published to any registry.
+forks_of_third_party_clients:
+- freshdesk-ruby
+- frontapp
+- checkr-ruby
+- customerio-ruby
+- zoom_rb
+- rails
+- scenic
+- code-review-metrics
+registries_checked:
+- registry: npm
+  query: stepful
+  result: 0 packages
+- registry: pypi
+  query: stepful
+  result: '404'
+- registry: rubygems
+  query: cyperful
+  result: 1 first-party package
+summary:
+  official_api_sdks: 0
+  official_packages: 1
+  languages: []

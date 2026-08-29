@@ -1,17 +1,38 @@
 aid: stepful
 name: Stepful
-description: 'Stepful is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Stepful is a New York-based healthcare workforce education company that trains people with a
+  high-school education for entry-level allied-health roles in as little as four months. It runs
+  live, cohort-based online programs — Medical Assistant, Pharmacy Technician, Patient Care
+  Technician, Medical Administrative Assistant, Surgical Technologist, Dental Assistant, Phlebotomy
+  Technician, Sterile Processing and Practical Nursing — pairing virtual instructor-led classes and
+  1:1 coaching with at-home clinical skills kits, employer-site clinical rotations and an AI-assisted
+  practice platform, then places graduates into hospital and clinic jobs. Its "School-as-a-Service"
+  employer product lets health systems stand up in-house training and upskilling pipelines. Stepful
+  is backed by Y Combinator, Oak HC/FT and Reach Capital, has raised a $31.5M Series B and a $55M
+  Series C, and reports having served more than 30,000 students. It is a Delaware corporation
+  approved to operate by state career-school boards in Alabama, California, Indiana, Kentucky,
+  Michigan, Ohio, Pennsylvania, Texas and Utah. Stepful publishes no public developer API: its
+  student classroom and staff admin applications are both authenticated-only, and no OpenAPI,
+  GraphQL, MCP or webhook contract is served from any host it controls.
+image: https://cdn.prod.website-files.com/60fae2951956f7e83dd6018b/6894edaeb10999d0cfd0257e_logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/stepful/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
+- Education
+- Healthcare
+- Workforce Development
+- Online Learning
+- Certification
+- Allied Health
+- Career Training
+- Staffing
+- EdTech
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +41,59 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.stepful.com/
+- type: Blog
+  url: https://www.stepful.com/blog
+- type: Support
+  url: https://www.stepful.com/faq
+- type: Login
+  url: https://classroom.stepful.com/users/sign_in
+- type: TermsOfService
+  url: https://www.stepful.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.stepful.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/stepful
+- type: Compliance
+  url: https://www.stepful.com/regulatory-information
+- type: Conformance
+  url: conformance/stepful-conformance.yml
+- type: Packages
+  url: packages/stepful-packages.yml
+- type: DomainSecurity
+  url: security/stepful-domain-security.yml
+- type: LLMsTxt
+  url: llms/stepful-llms.txt
+- type: Plans
+  url: plans/stepful-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/stepful-rate-limits.yml
+- type: SecondaryMarket
   url: https://forgeglobal.com/stepful_stock/
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Stepful ships an AI-assisted healthcare-training platform only as an end-user product —
+    its student classroom and staff admin apps are Rails/Devise logins with no API, and
+    full contract discovery across six stepful.com hosts found no OpenAPI, GraphQL, MCP,
+    agent card or webhook surface; the only APIs answering on a stepful.com hostname are
+    vendor CNAMEs (c.stepful.com is Converge, issuer app.runconverge.com; k.stepful.com is
+    a PostHog proxy) and are not Stepful's.
+  evidence:
+  - url: https://www.stepful.com/openapi.json
+    status: 404
+  - url: https://www.stepful.com/.well-known/agent-card.json
+    status: 404
+  - url: https://classroom.stepful.com/api/v1/openapi.json
+    status: 404
+  - url: https://admin.stepful.com/api-docs
+    status: 404
+  - url: https://c.stepful.com/.well-known/openid-configuration
+    status: 200
+  checked: '2026-08-29'

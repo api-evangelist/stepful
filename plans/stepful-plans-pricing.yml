@@ -1,0 +1,31 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.stepful.com/ (200), https://www.stepful.com/programs (200),
+  https://www.stepful.com/for-employers (200), https://www.stepful.com/grants (200),
+  https://www.stepful.com/regulatory-information (200); /pricing 404, /affordability 404
+plan_count: 0
+plans: []
+note: >-
+  Stepful publishes NO API plans, because it publishes no API. It is not an enterprise
+  "contact us" API either — there is no developer product at all. What it sells is course
+  tuition to students and a "School-as-a-Service" contract to employer health systems, and
+  neither has a published price list: the site's Affordability and For Employers routes are
+  navigation labels rather than crawlable pricing pages (/pricing and /affordability both
+  return 404), program cost is disclosed in the downloadable Student Catalog linked from the
+  regulatory information page and in individual blog posts, and the employer product routes
+  to a "Get Started" sales form. Recording plan_count: 0 here is an honest zero for the API
+  plans this artifact measures, not a claim that the company sells nothing.
+commercial_model:
+  student: >-
+    Per-program tuition for cohort-based certification programs (Medical Assistant, Pharmacy
+    Technician, Patient Care Technician, Medical Administrative Assistant, Surgical
+    Technologist, Dental Assistant, Phlebotomy Technician, Sterile Processing, Practical
+    Nursing, RN-to-BSN). Price not published on a crawlable page.
+  employer: >-
+    "School-as-a-Service" — employer-led in-house training, upskilling and talent-pipeline
+    programs, quoted through a sales conversation. No rate card published.
+  funding_assistance: >-
+    A /grants page (200) describes third-party funding routes; employer tuition
+    reimbursement is discussed editorially on the blog.
+api_plans: none

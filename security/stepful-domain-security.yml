@@ -1,0 +1,79 @@
+generated: '2026-08-29'
+method: probed
+source: live DNS/TLS/HTTP probes of every stepful.com host discovered during enrichment
+note: >-
+  Stepful publishes no API host. The hosts below are its marketing site (Webflow behind
+  Cloudflare), its authenticated student classroom and staff admin applications, its asset
+  CDN, and two vendor subdomains CNAME'd to third parties (c.stepful.com -> Converge /
+  runconverge.com, k.stepful.com -> PostHog / proxyhog.com). Vendor-operated hosts are
+  recorded for completeness but their posture is the vendor's, not Stepful's.
+hosts:
+- host: www.stepful.com
+  https: true
+  tls_version: TLSv1.3
+  cert_valid: true
+  cert_expires: 'Oct  7 23:52:27 2026 GMT'
+  hsts: false
+  server: cloudflare
+  operator: stepful
+  role: marketing site (Webflow)
+- host: classroom.stepful.com
+  https: true
+  tls_version: TLSv1.3
+  cert_valid: true
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  server: cloudflare
+  operator: stepful
+  role: authenticated student learning application (Rails/Devise)
+- host: admin.stepful.com
+  https: true
+  tls_version: TLSv1.3
+  cert_valid: true
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  server: Heroku
+  operator: stepful
+  role: authenticated staff admin application (Rails/Devise)
+- host: asset-cdn.stepful.com
+  https: true
+  tls_version: TLSv1.3
+  cert_valid: true
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  server: cloudflare
+  operator: stepful
+  role: static asset CDN (CloudFront)
+- host: c.stepful.com
+  https: true
+  tls_version: TLSv1.3
+  cert_valid: true
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  csp: true
+  x_frame_options: DENY
+  x_content_type_options: nosniff
+  operator: third-party (Converge, runconverge.com)
+  role: first-party-domain analytics/attribution proxy; CNAME dqhzqrkt8v2js.cloudfront.net
+- host: k.stepful.com
+  https: true
+  operator: third-party (PostHog)
+  role: product-analytics reverse proxy; CNAME d4f93c1a51f965c39c9e.cf-prod-us-proxy.proxyhog.com
+domains:
+- domain: stepful.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: 'v=spf1 include:_spf.google.com ~all'
+  dmarc: true
+  dmarc_policy: none
+  dmarc_record: 'v=DMARC1; p=none; rua=mailto:postmaster@stepful.com; pct=100; adkim=s; aspf=s'
+findings:
+- No CAA record is published for stepful.com, so any public CA may issue for the domain.
+- DNSSEC is not enabled on stepful.com.
+- DMARC is published but at p=none, so no enforcement action is requested of receivers.
+- The apex marketing host www.stepful.com does not send HSTS, while every application host does.

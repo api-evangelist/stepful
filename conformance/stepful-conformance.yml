@@ -1,0 +1,146 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.stepful.com/regulatory-information (HTTP 200),
+  https://www.stepful.com/privacy-policy (HTTP 200), contract-discovery probes across every
+  stepful.com host, 2026-08-29
+note: >-
+  Stepful publishes no machine-readable contract of any kind, so every API/interoperability
+  conformance assertion below is necessarily false and is recorded as an honest negative
+  rather than omitted. What Stepful DOES publish, and publishes well, is a detailed
+  regulatory-compliance disclosure: named state career-school approvals with license
+  numbers. That is the compliance surface this company actually has, and it is what the
+  `Compliance` pointer in apis.yml points at.
+api_conformance:
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc
+    all 404 on www.stepful.com, classroom.stepful.com and admin.stepful.com.
+- id: graphql
+  conforms: false
+  evidence: /graphql returns 404 on every stepful.com host probed.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented or served.
+- id: mcp
+  conforms: false
+  evidence: >-
+    No MCP endpoint on any Stepful-operated host. c.stepful.com/api/mcp exists but is
+    Converge's (issuer https://app.runconverge.com/api/mcp) reached through a CNAME'd
+    vendor subdomain, and returns 401 to anonymous tools/list.
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json 404 on all six hosts probed.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No Stepful-operated OAuth surface. classroom.stepful.com and admin.stepful.com are
+    Rails/Devise session logins, not authorization servers.
+- id: oidc
+  conforms: false
+  evidence: >-
+    /.well-known/openid-configuration 404s on every Stepful-operated host; the only 200 is
+    Converge's on c.stepful.com and is not Stepful's.
+- id: rfc9457
+  conforms: false
+  evidence: No published error contract to evaluate.
+- id: rfc9116
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every host.
+domain_standards:
+- id: lti
+  market: education / learning interoperability
+  conforms: false
+  evidence: >-
+    No LTI launch endpoint, tool configuration or deep-linking surface is published. Probed
+    against every host; no contract exists to declare one in.
+- id: oneroster
+  market: education rostering
+  conforms: false
+  evidence: No OneRoster endpoint or CSV bulk profile published.
+- id: caliper
+  market: learning analytics
+  conforms: false
+  evidence: No Caliper sensor or event envelope published.
+- id: xapi
+  market: learning experience records
+  conforms: false
+  evidence: No xAPI Learning Record Store endpoint published.
+- id: ed-fi
+  market: education data standard
+  conforms: false
+  evidence: No Ed-Fi API surface published.
+- id: scorm
+  market: courseware packaging
+  conforms: false
+  evidence: >-
+    Courseware is delivered inside Stepful's own authenticated classroom application; no
+    SCORM package export is offered publicly.
+domain_standard_note: >-
+  REWARD-ONLY CHECK, HONEST MISS. Stepful sits in a market that does have real
+  interoperability standards (1EdTech LTI/OneRoster/Caliper/QTI, xAPI, Ed-Fi) and its
+  employer "School-as-a-Service" product is exactly the shape that would consume them — an
+  employer standing up training against its own HR and workforce systems. None is declared,
+  because no contract exists in which to declare one. This is the single highest-leverage
+  gap on this profile, not a penalty.
+regulatory_compliance:
+  published: true
+  url: https://www.stepful.com/regulatory-information
+  http_status: 200
+  accrediting_body: >-
+    Stepful, Inc. states plainly that it is NOT accredited by a U.S. Department of Education
+    recognized accrediting body.
+  approvals:
+  - state: Alabama
+    authority: Alabama Private School Licensure
+    identifier: '25-1799-27'
+  - state: California
+    authority: California Bureau for Private Postsecondary Education
+    identifier: '90285941'
+    detail: >-
+      Out-of-state private institution approved to operate; compliant with the California
+      Private Postsecondary Education Act of 2009 and Division 7.5 of Title 5 CCR. Also
+      registered with the California DFPI under the CCFPL per CCR 1012(b), registration
+      03-CCFPL-2755823-3618840.
+  - state: Indiana
+    authority: Indiana Department of Workforce Development, Office for Career and Technical Schools
+    identifier: null
+  - state: Kentucky
+    authority: Kentucky Commission on Proprietary Education
+    identifier: KY-NR-0189
+  - state: Michigan
+    authority: Michigan Department of Labor and Economic Opportunity, Post-Secondary Schools
+    identifier: null
+  - state: Ohio
+    authority: Ohio State Board of Career Colleges and Schools
+    identifier: '2307'
+    detail: Meets the requirements of Chapter 3332 of the Ohio Revised Code.
+  - state: Pennsylvania
+    authority: Pennsylvania Department of Education, State Board of Private Licensed Schools
+    identifier: null
+  - state: Texas
+    authority: Texas Workforce Commission
+    identifier: S6524
+  - state: Utah
+    authority: Utah Division of Consumer Protection
+    identifier: '14215552-9983'
+  - state: Wyoming
+    authority: Wyoming Department of Education
+    identifier: null
+    detail: Chapter 1 Proprietary Institution approval.
+  student_catalog: >-
+    A downloadable Student Catalog containing Stepful's Grievance Policy is linked from the
+    regulatory information page.
+security_certifications:
+  soc2: null
+  iso27001: null
+  hipaa: null
+  fedramp: null
+  pci: null
+  note: >-
+    No trust center, certification page or security page is published (/security, /trust,
+    trust.stepful.com all miss). Stepful trains healthcare workers but does not itself hold
+    patient records as a covered entity in any public claim, so the absence of a HIPAA
+    statement is not by itself a finding.
