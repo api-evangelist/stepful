@@ -15,6 +15,19 @@ description: >-
   Michigan, Ohio, Pennsylvania, Texas and Utah. Stepful publishes no public developer API: its
   student classroom and staff admin applications are both authenticated-only, and no OpenAPI,
   GraphQL, MCP or webhook contract is served from any host it controls.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - rate-limits
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://cdn.prod.website-files.com/60fae2951956f7e83dd6018b/6894edaeb10999d0cfd0257e_logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/stepful/refs/heads/main/apis.yml
 x-type: company
